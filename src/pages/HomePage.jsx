@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { Helmet } from 'react-helmet-async'
 import CTAButton from '../components/CTAButton'
 import Gallery from '../components/Gallery'
 import './HomePage.css'
@@ -25,6 +26,12 @@ export default function HomePage() {
 
   return (
     <>
+      <Helmet>
+        <title>Kavod International — Advancing AI & Digital Literacy for Africa</title>
+        <meta name="description" content="Kavod International equips Africa's youth, professionals, and communities with AI and digital literacy skills. We exist to ensure Africa creates, leads, and shapes the age of AI — with dignity." />
+        <link rel="canonical" href="https://kavod.org" />
+      </Helmet>
+
       {/* ============================================
           HERO — full-bleed, premium editorial
           ============================================ */}

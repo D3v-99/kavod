@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async'
 import PageBanner from '../components/PageBanner'
 import SectionTitle from '../components/SectionTitle'
 import Gallery from '../components/Gallery'
@@ -18,6 +19,12 @@ const PROGRAMMES = [
 export default function ProgrammesPage() {
   return (
     <>
+      <Helmet>
+        <title>Programmes — Kavod International | AI Workshops & Digital Bootcamps</title>
+        <meta name="description" content="AI literacy workshops, digital bootcamps, media literacy training, institutional consultancy, community outreach, and policy dialogues across Africa." />
+        <link rel="canonical" href="https://kavod.org/programmes" />
+      </Helmet>
+
       <PageBanner title="Programmes" subtitle="Practical initiatives that build skills, advise institutions, and shape policy." />
 
       <section className="section">

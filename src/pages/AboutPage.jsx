@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async'
 import PageBanner from '../components/PageBanner'
 import SectionTitle from '../components/SectionTitle'
 import CTAButton from '../components/CTAButton'
@@ -7,6 +8,12 @@ import './AboutPage.css'
 export default function AboutPage() {
   return (
     <>
+      <Helmet>
+        <title>About Us — Kavod International | Our Story & Mission</title>
+        <meta name="description" content="Kavod means 'dignity' in Hebrew. Learn about our mission to advance AI and digital literacy across Africa, our vision, governance, and the story behind our name." />
+        <link rel="canonical" href="https://kavod.org/about" />
+      </Helmet>
+
       <PageBanner title="About Us" subtitle="Understanding who we are, why we exist, and what drives us." />
 
       {/* Background + Image */}
@@ -45,12 +52,24 @@ export default function AboutPage() {
           <SectionTitle title="Vision &amp; Mission" />
           <div className="about__vm">
             <div className="about__vm-card about__vm-card--vision">
-              <span className="about__vm-icon">🔭</span>
+              <span className="about__vm-icon">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="14" cy="14" r="13" stroke="currentColor" strokeWidth="1.5"/>
+                  <circle cx="14" cy="14" r="5" stroke="currentColor" strokeWidth="1.2"/>
+                  <path d="M14 2v4M14 22v4M2 14h4M22 14h4" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
+                </svg>
+              </span>
               <h3>Our Vision</h3>
               <p>A digitally empowered Africa where artificial intelligence and technology are used ethically, inclusively, and responsibly to transform lives and communities.</p>
             </div>
             <div className="about__vm-card about__vm-card--mission">
-              <span className="about__vm-icon">🎯</span>
+              <span className="about__vm-icon">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="14" cy="14" r="12" stroke="currentColor" strokeWidth="1.5"/>
+                  <circle cx="14" cy="14" r="4" stroke="currentColor" strokeWidth="1.5"/>
+                  <circle cx="14" cy="14" r="1.5" fill="currentColor"/>
+                </svg>
+              </span>
               <h3>Our Mission</h3>
               <p>To promote AI literacy, digital literacy, ethical technology adoption, innovation, research, and capacity building across Africa through training, consultancy, advocacy, partnerships, and community empowerment.</p>
             </div>
@@ -72,10 +91,10 @@ export default function AboutPage() {
           <SectionTitle title="Governance" subtitle="Accountability, transparency, and ethical conduct guide everything we do." />
           <div className="about__governance">
             <div className="about__gov-grid">
-              <div className="about__gov-card"><span className="about__gov-icon">🏛️</span><h4>Board of Directors</h4><p>Strategic oversight and mission safeguarding</p></div>
-              <div className="about__gov-card"><span className="about__gov-icon">👥</span><h4>Executive Team</h4><p>Day-to-day leadership and programme delivery</p></div>
-              <div className="about__gov-card"><span className="about__gov-icon">🎓</span><h4>Expert Advisors</h4><p>Domain expertise across AI, education, and policy</p></div>
-              <div className="about__gov-card"><span className="about__gov-icon">🤝</span><h4>Trainer Network</h4><p>Community-based trainers and volunteers</p></div>
+              <div className="about__gov-card"><span className="about__gov-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 21h18M3 21V10l9-6 9 6v11H3z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/><path d="M9 15h6M9 11h6" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/></svg></span><h4>Board of Directors</h4><p>Strategic oversight and mission safeguarding</p></div>
+              <div className="about__gov-card"><span className="about__gov-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="7" r="3" stroke="currentColor" strokeWidth="1.5"/><path d="M3 21c0-4 3-7 6-7s6 3 6 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/><circle cx="18" cy="8" r="2.5" stroke="currentColor" strokeWidth="1.5"/><path d="M14 21c0-3 2-5 4-5s4 2 4 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg></span><h4>Executive Team</h4><p>Day-to-day leadership and programme delivery</p></div>
+              <div className="about__gov-card"><span className="about__gov-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="2" width="18" height="16" rx="2" stroke="currentColor" strokeWidth="1.5"/><path d="M7 22h10M12 18v4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/><path d="M7 7h2M11 7h6M7 11h8M7 15h4" stroke="currentColor" strokeWidth="1" strokeLinecap="round"/></svg></span><h4>Expert Advisors</h4><p>Domain expertise across AI, education, and policy</p></div>
+              <div className="about__gov-card"><span className="about__gov-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="7" cy="7" r="3" stroke="currentColor" strokeWidth="1.5"/><circle cx="17" cy="7" r="3" stroke="currentColor" strokeWidth="1.5"/><path d="M3 21c0-4 2.5-7 4-7s4 3 4 7M17 14c1.5 0 4 3 4 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/><path d="M10 11h4" stroke="currentColor" strokeWidth="1" strokeLinecap="round"/></svg></span><h4>Trainer Network</h4><p>Community-based trainers and volunteers</p></div>
             </div>
             <p className="about__gov-note">As the organisation grows, thematic units — Literacy &amp; Training, Consultancy, Research &amp; Policy, and Communications — will be formalised.</p>
           </div>

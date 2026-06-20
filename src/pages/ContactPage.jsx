@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Helmet } from 'react-helmet-async'
 import PageBanner from '../components/PageBanner'
 import SectionTitle from '../components/SectionTitle'
 import './ContactPage.css'
@@ -18,6 +19,12 @@ export default function ContactPage() {
 
   return (
     <>
+      <Helmet>
+        <title>Contact Us — Kavod International | Partner With Us Across Africa</title>
+        <meta name="description" content="Get in touch with Kavod International. Partner with us, invite us to train your community, or inquire about our AI and digital literacy programmes in Africa." />
+        <link rel="canonical" href="https://kavod.org/contact" />
+      </Helmet>
+
       <PageBanner title="Contact Us" subtitle="Whether it's a partnership, an inquiry, or a conversation — we'd love to hear from you." />
 
       <section className="section">
@@ -56,19 +63,19 @@ export default function ContactPage() {
 
             <div className="contact__sidebar">
               <div className="contact__info-card">
-                <span className="contact__info-icon">📧</span>
+                <span className="contact__info-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" strokeWidth="1.5"/><path d="M2 7l10 7 10-7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg></span>
                 <h3>Email Us</h3>
                 <a href="mailto:info@kavodinternational.org">info@kavodinternational.org</a>
               </div>
 
               <div className="contact__info-card">
-                <span className="contact__info-icon">📍</span>
+                <span className="contact__info-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="9" r="7" stroke="currentColor" strokeWidth="1.5"/><path d="M12 2v3M12 20v2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/><path d="M8 16c-4 2-6 5-6 5h20s-2-3-6-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg></span>
                 <h3>Location</h3>
                 <p>Nairobi, Kenya</p>
               </div>
 
               <div className="contact__info-card">
-                <span className="contact__info-icon">🌐</span>
+                <span className="contact__info-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.5"/><ellipse cx="12" cy="12" rx="4" ry="10" stroke="currentColor" strokeWidth="1.5"/><path d="M2 12h20" stroke="currentColor" strokeWidth="1.5"/></svg></span>
                 <h3>Follow Us</h3>
                 <ul className="contact__social">
                   <li><a href="#">LinkedIn</a></li>

@@ -53,7 +53,7 @@ textarea { resize: vertical; min-height: 110px; }
 /* Sidebar */
 .contact__sidebar { display: flex; flex-direction: column; gap: var(--space-lg); }
 .contact__info-card { background: var(--color-white); border-radius: var(--border-radius); padding: var(--space-xl); border: 1px solid var(--color-border); }
-.contact__info-icon { font-size: 1.5rem; display: block; margin-bottom: var(--space-sm); }
+.contact__info-icon { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 10px; background: var(--color-navy-tint); margin-bottom: var(--space-sm); color: var(--color-primary); }
 .contact__info-card h3 { font-size: 0.9375rem; margin-bottom: var(--space-xs); }
 .contact__info-card a,
 .contact__info-card p { font-size: 0.875rem; margin-bottom: 0; }

@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async'
 import PageBanner from '../components/PageBanner'
 import SectionTitle from '../components/SectionTitle'
 import Gallery from '../components/Gallery'
@@ -78,6 +79,12 @@ const AUDIENCES = [
 export default function WhoWeServePage() {
   return (
     <>
+      <Helmet>
+        <title>Who We Serve — Kavod International | Youth, Educators & Policymakers</title>
+        <meta name="description" content="We work with youth, students, universities, government, NGOs, journalists, entrepreneurs, women, and policymakers across Africa — because digital dignity is for everyone." />
+        <link rel="canonical" href="https://kavod.org/who-we-serve" />
+      </Helmet>
+
       <PageBanner title="Who We Serve" subtitle="Our programmes reach across sectors and communities — because digital dignity is for everyone." />
 
       {/* Audience Cards */}

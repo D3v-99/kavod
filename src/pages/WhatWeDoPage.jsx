@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async'
 import PageBanner from '../components/PageBanner'
 import SectionTitle from '../components/SectionTitle'
 import CTAButton from '../components/CTAButton'
@@ -83,6 +84,12 @@ const OBJECTIVES = [
 export default function WhatWeDoPage() {
   return (
     <>
+      <Helmet>
+        <title>What We Do — Kavod International | AI & Digital Literacy in Africa</title>
+        <meta name="description" content="Our core objectives: AI literacy, digital skills, consultancy, training, ethical AI advocacy, innovation support, and information integrity for Africa's digital future." />
+        <link rel="canonical" href="https://kavod.org/what-we-do" />
+      </Helmet>
+
       <PageBanner title="What We Do" subtitle="Our objectives, focus areas, and how we create lasting impact." />
 
       {/* Core Objectives — image + card list */}

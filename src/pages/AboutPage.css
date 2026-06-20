@@ -28,7 +28,8 @@
 .about__vm-card { background: var(--color-white); border-radius: var(--border-radius); padding: var(--space-3xl) var(--space-2xl); box-shadow: 0 2px 8px rgba(0,0,0,0.04); border: 1px solid var(--color-border); }
 .about__vm-card--vision { border-top: 4px solid var(--color-primary); }
 .about__vm-card--mission { border-top: 4px solid var(--color-gold); }
-.about__vm-icon { font-size: 2rem; display: block; margin-bottom: var(--space-lg); }
+.about__vm-icon { display: flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 12px; background: var(--color-navy-tint); margin-bottom: var(--space-lg); color: var(--color-primary); }
+.about__vm-card--mission .about__vm-icon { background: rgba(200, 148, 62, 0.1); color: var(--color-gold); }
 .about__vm-card h3 { margin-bottom: var(--space-sm); }
 .about__vm-card p { font-size: 0.9375rem; line-height: 1.8; margin-bottom: 0; }
 
@@ -42,7 +43,7 @@
 .about__governance { background: var(--color-white); border-radius: var(--border-radius); padding: var(--space-3xl) var(--space-2xl); box-shadow: 0 1px 3px rgba(0,0,0,0.04); border: 1px solid var(--color-border); }
 .about__gov-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-lg); margin-bottom: var(--space-2xl); }
 .about__gov-card { text-align: center; padding: var(--space-lg) var(--space-sm); }
-.about__gov-icon { font-size: 1.75rem; display: block; margin-bottom: var(--space-sm); }
+.about__gov-icon { display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 12px; background: var(--color-navy-tint); margin: 0 auto var(--space-sm); color: var(--color-primary); }
 .about__gov-card h4 { font-size: 0.875rem; margin-bottom: var(--space-xs); }
 .about__gov-card p { font-size: 0.8125rem; margin-bottom: 0; line-height: 1.5; }
 .about__gov-note { text-align: center; font-size: 0.875rem; color: var(--color-muted); margin-bottom: 0; }
