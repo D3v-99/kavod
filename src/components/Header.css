@@ -109,30 +109,25 @@
 }
 
 /* ========================================
-   Desktop: hide mobile overlay, show inline nav
+   Mobile overlay — portaled to body
    ======================================== */
 .header__mobile-overlay {
   display: none;
 }
 
-/* Hide desktop nav on mobile */
+/* Hide desktop nav & show hamburger on mobile */
 @media (max-width: 768px) {
   .header { height: 96px; }
   .header--scrolled { height: 70px; }
   .header__logo-img { height: 76px; }
   .header--scrolled .header__logo-img { height: 52px; }
 
-  /* Hide desktop nav */
   .header__nav { display: none; }
-
-  /* Show hamburger */
   .header__hamburger { display: flex; }
 
-  /* ========================================
-     Mobile overlay — full dark screen
-     ======================================== */
+  /* Full-screen dark overlay */
   .header__mobile-overlay {
-    display: block;
+    display: flex;
     position: fixed;
     inset: 0;
     background: rgba(18, 52, 86, 0.96);
@@ -141,7 +136,6 @@
     opacity: 0;
     pointer-events: none;
     transition: opacity 400ms cubic-bezier(0.16, 1, 0.3, 1);
-    display: flex;
     align-items: center;
     justify-content: center;
     overflow-y: auto;
@@ -191,12 +185,7 @@
     background: rgba(200, 148, 62, 0.12);
   }
 
-  .header__mobile-nav-link--active:hover {
-    color: var(--color-gold);
-    background: rgba(200, 148, 62, 0.18);
-  }
-
-  /* Staggered slide-in animation for each link */
+  /* Staggered slide-in */
   .header__mobile-overlay--open .header__mobile-nav-list li {
     animation: mobile-nav-fade-up 450ms ease both;
   }
