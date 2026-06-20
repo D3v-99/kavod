@@ -3,6 +3,7 @@ import PageBanner from '../components/PageBanner'
 import SectionTitle from '../components/SectionTitle'
 import Gallery from '../components/Gallery'
 import CTAButton from '../components/CTAButton'
+import { SITE_NAME, OG_IMAGE, TWITTER_HANDLE, BASE_URL } from '../seo'
 import './WhoWeServePage.css'
 
 const AUDIENCE_ICONS = [
@@ -80,9 +81,25 @@ export default function WhoWeServePage() {
   return (
     <>
       <Helmet>
-        <title>Who We Serve — Kavod International | Youth, Educators & Policymakers</title>
-        <meta name="description" content="We work with youth, students, universities, government, NGOs, journalists, entrepreneurs, women, and policymakers across Africa — because digital dignity is for everyone." />
-        <link rel="canonical" href="https://kavod.org/who-we-serve" />
+        <title>Who We Serve — Kavod International | Youth, Educators &amp; Policymakers Across Africa</title>
+        <meta name="description" content="We work with students and youth, universities and educators, government bodies, NGOs and civil society, journalists and media professionals, entrepreneurs, women, and policymakers across Africa." />
+        <link rel="canonical" href={`${BASE_URL}/who-we-serve`} />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content={SITE_NAME} />
+        <meta property="og:title" content="Who We Serve — Kavod International | Youth, Educators & Policymakers Across Africa" />
+        <meta property="og:description" content="We work with students, youth, universities, government, NGOs, journalists, entrepreneurs, women, and policymakers across Africa — because digital dignity is for everyone." />
+        <meta property="og:url" content={`${BASE_URL}/who-we-serve`} />
+        <meta property="og:image" content={OG_IMAGE} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:locale" content="en_US" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content={TWITTER_HANDLE} />
+        <meta name="twitter:title" content="Who We Serve — Kavod International | Youth, Educators & Policymakers Across Africa" />
+        <meta name="twitter:description" content="We work with students, youth, universities, government, NGOs, journalists, entrepreneurs, women, and policymakers across Africa — because digital dignity is for everyone." />
+        <meta name="twitter:image" content={OG_IMAGE} />
       </Helmet>
 
       <PageBanner title="Who We Serve" subtitle="Our programmes reach across sectors and communities — because digital dignity is for everyone." />

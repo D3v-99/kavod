@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import { Helmet } from 'react-helmet-async'
 import CTAButton from '../components/CTAButton'
 import Gallery from '../components/Gallery'
+import { SITE_NAME, OG_IMAGE, TWITTER_HANDLE, BASE_URL } from '../seo'
 import './HomePage.css'
 
 export default function HomePage() {
@@ -27,9 +28,25 @@ export default function HomePage() {
   return (
     <>
       <Helmet>
-        <title>Kavod International — Advancing AI & Digital Literacy for Africa</title>
+        <title>Kavod International — Advancing AI & Digital Literacy Across Africa</title>
         <meta name="description" content="Kavod International equips Africa's youth, professionals, and communities with AI and digital literacy skills. We exist to ensure Africa creates, leads, and shapes the age of AI — with dignity." />
-        <link rel="canonical" href="https://kavod.org" />
+        <link rel="canonical" href={`${BASE_URL}/`} />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content={SITE_NAME} />
+        <meta property="og:title" content="Kavod International — Advancing AI & Digital Literacy Across Africa" />
+        <meta property="og:description" content="Kavod International equips Africa's youth, professionals, and communities with AI and digital literacy skills. We exist to ensure Africa creates, leads, and shapes the age of AI — with dignity." />
+        <meta property="og:url" content={`${BASE_URL}/`} />
+        <meta property="og:image" content={OG_IMAGE} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:locale" content="en_US" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content={TWITTER_HANDLE} />
+        <meta name="twitter:title" content="Kavod International — Advancing AI & Digital Literacy Across Africa" />
+        <meta name="twitter:description" content="Kavod International equips Africa's youth, professionals, and communities with AI and digital literacy skills. We exist to ensure Africa creates, leads, and shapes the age of AI — with dignity." />
+        <meta name="twitter:image" content={OG_IMAGE} />
       </Helmet>
 
       {/* ============================================

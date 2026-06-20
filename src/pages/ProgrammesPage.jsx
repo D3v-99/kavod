@@ -3,6 +3,7 @@ import PageBanner from '../components/PageBanner'
 import SectionTitle from '../components/SectionTitle'
 import Gallery from '../components/Gallery'
 import CTAButton from '../components/CTAButton'
+import { SITE_NAME, OG_IMAGE, TWITTER_HANDLE, BASE_URL } from '../seo'
 import './ProgrammesPage.css'
 
 const PROGRAMMES = [
@@ -20,9 +21,25 @@ export default function ProgrammesPage() {
   return (
     <>
       <Helmet>
-        <title>Programmes — Kavod International | AI Workshops & Digital Bootcamps</title>
-        <meta name="description" content="AI literacy workshops, digital bootcamps, media literacy training, institutional consultancy, community outreach, and policy dialogues across Africa." />
-        <link rel="canonical" href="https://kavod.org/programmes" />
+        <title>Programmes — Kavod International | AI Workshops & Digital Bootcamps in Africa</title>
+        <meta name="description" content="Practical AI literacy workshops, digital bootcamps, media literacy training, online safety programmes, institutional consultancy, community outreach, and policy dialogues delivered across Africa." />
+        <link rel="canonical" href={`${BASE_URL}/programmes`} />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content={SITE_NAME} />
+        <meta property="og:title" content="Programmes — Kavod International | AI Workshops & Digital Bootcamps in Africa" />
+        <meta property="og:description" content="Practical AI literacy workshops, digital bootcamps, media literacy training, online safety programmes, institutional consultancy, community outreach, and policy dialogues delivered across Africa." />
+        <meta property="og:url" content={`${BASE_URL}/programmes`} />
+        <meta property="og:image" content={OG_IMAGE} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:locale" content="en_US" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content={TWITTER_HANDLE} />
+        <meta name="twitter:title" content="Programmes — Kavod International | AI Workshops & Digital Bootcamps in Africa" />
+        <meta name="twitter:description" content="Practical AI literacy workshops, digital bootcamps, media literacy training, online safety programmes, institutional consultancy, community outreach, and policy dialogues delivered across Africa." />
+        <meta name="twitter:image" content={OG_IMAGE} />
       </Helmet>
 
       <PageBanner title="Programmes" subtitle="Practical initiatives that build skills, advise institutions, and shape policy." />

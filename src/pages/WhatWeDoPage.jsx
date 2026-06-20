@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async'
 import PageBanner from '../components/PageBanner'
 import SectionTitle from '../components/SectionTitle'
 import CTAButton from '../components/CTAButton'
+import { SITE_NAME, OG_IMAGE, TWITTER_HANDLE, BASE_URL } from '../seo'
 import './WhatWeDoPage.css'
 
 const FOCUS_AREAS = [
@@ -86,8 +87,24 @@ export default function WhatWeDoPage() {
     <>
       <Helmet>
         <title>What We Do — Kavod International | AI & Digital Literacy in Africa</title>
-        <meta name="description" content="Our core objectives: AI literacy, digital skills, consultancy, training, ethical AI advocacy, innovation support, and information integrity for Africa's digital future." />
-        <link rel="canonical" href="https://kavod.org/what-we-do" />
+        <meta name="description" content="We advance AI literacy, digital skills, media literacy, African language AI, youth innovation, and ethical technology policy through training, consultancy, research, and advocacy across Africa." />
+        <link rel="canonical" href={`${BASE_URL}/what-we-do`} />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content={SITE_NAME} />
+        <meta property="og:title" content="What We Do — Kavod International | AI & Digital Literacy in Africa" />
+        <meta property="og:description" content="We advance AI literacy, digital skills, media literacy, African language AI, youth innovation, and ethical technology policy through training, consultancy, research, and advocacy across Africa." />
+        <meta property="og:url" content={`${BASE_URL}/what-we-do`} />
+        <meta property="og:image" content={OG_IMAGE} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:locale" content="en_US" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content={TWITTER_HANDLE} />
+        <meta name="twitter:title" content="What We Do — Kavod International | AI & Digital Literacy in Africa" />
+        <meta name="twitter:description" content="We advance AI literacy, digital skills, media literacy, African language AI, youth innovation, and ethical technology policy through training, consultancy, research, and advocacy across Africa." />
+        <meta name="twitter:image" content={OG_IMAGE} />
       </Helmet>
 
       <PageBanner title="What We Do" subtitle="Our objectives, focus areas, and how we create lasting impact." />

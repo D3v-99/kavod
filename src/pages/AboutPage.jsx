@@ -3,15 +3,32 @@ import PageBanner from '../components/PageBanner'
 import SectionTitle from '../components/SectionTitle'
 import CTAButton from '../components/CTAButton'
 import Gallery from '../components/Gallery'
+import { SITE_NAME, OG_IMAGE, TWITTER_HANDLE, BASE_URL } from '../seo'
 import './AboutPage.css'
 
 export default function AboutPage() {
   return (
     <>
       <Helmet>
-        <title>About Us — Kavod International | Our Story & Mission</title>
-        <meta name="description" content="Kavod means 'dignity' in Hebrew. Learn about our mission to advance AI and digital literacy across Africa, our vision, governance, and the story behind our name." />
-        <link rel="canonical" href="https://kavod.org/about" />
+        <title>About Us — Kavod International | Our Story &amp; Mission in Africa</title>
+        <meta name="description" content="Kavod means 'dignity' in Hebrew. Learn about our mission to advance AI and digital literacy across Africa, our vision for an empowered continent, our governance structure, and the story behind our name." />
+        <link rel="canonical" href={`${BASE_URL}/about`} />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content={SITE_NAME} />
+        <meta property="og:title" content="About Us — Kavod International | Our Story & Mission in Africa" />
+        <meta property="og:description" content="Kavod means 'dignity' in Hebrew. Learn about our mission to advance AI and digital literacy across Africa, our vision for an empowered continent, and the story behind our name." />
+        <meta property="og:url" content={`${BASE_URL}/about`} />
+        <meta property="og:image" content={OG_IMAGE} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:locale" content="en_US" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content={TWITTER_HANDLE} />
+        <meta name="twitter:title" content="About Us — Kavod International | Our Story & Mission in Africa" />
+        <meta name="twitter:description" content="Kavod means 'dignity' in Hebrew. Learn about our mission to advance AI and digital literacy across Africa, our vision for an empowered continent, and the story behind our name." />
+        <meta name="twitter:image" content={OG_IMAGE} />
       </Helmet>
 
       <PageBanner title="About Us" subtitle="Understanding who we are, why we exist, and what drives us." />

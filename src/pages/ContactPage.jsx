@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 import PageBanner from '../components/PageBanner'
 import SectionTitle from '../components/SectionTitle'
+import { SITE_NAME, OG_IMAGE, TWITTER_HANDLE, BASE_URL } from '../seo'
 import './ContactPage.css'
 
 export default function ContactPage() {
@@ -21,8 +22,24 @@ export default function ContactPage() {
     <>
       <Helmet>
         <title>Contact Us — Kavod International | Partner With Us Across Africa</title>
-        <meta name="description" content="Get in touch with Kavod International. Partner with us, invite us to train your community, or inquire about our AI and digital literacy programmes in Africa." />
-        <link rel="canonical" href="https://kavod.org/contact" />
+        <meta name="description" content="Get in touch with Kavod International. Partner with us, invite us to train your community, or inquire about our AI and digital literacy programmes delivered across Africa from our base in Nairobi, Kenya." />
+        <link rel="canonical" href={`${BASE_URL}/contact`} />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content={SITE_NAME} />
+        <meta property="og:title" content="Contact Us — Kavod International | Partner With Us Across Africa" />
+        <meta property="og:description" content="Get in touch with Kavod International. Partner with us, invite us to train your community, or inquire about our AI and digital literacy programmes delivered across Africa." />
+        <meta property="og:url" content={`${BASE_URL}/contact`} />
+        <meta property="og:image" content={OG_IMAGE} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:locale" content="en_US" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content={TWITTER_HANDLE} />
+        <meta name="twitter:title" content="Contact Us — Kavod International | Partner With Us Across Africa" />
+        <meta name="twitter:description" content="Get in touch with Kavod International. Partner with us, invite us to train your community, or inquire about our AI and digital literacy programmes delivered across Africa." />
+        <meta name="twitter:image" content={OG_IMAGE} />
       </Helmet>
 
       <PageBanner title="Contact Us" subtitle="Whether it's a partnership, an inquiry, or a conversation — we'd love to hear from you." />
