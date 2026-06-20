@@ -1,0 +1,240 @@
+/* ========================================
+   Kavod International — Global Styles
+   Designer: Premium NGO aesthetic
+   ======================================== */
+
+:root {
+  --color-primary: #123456;
+  --color-primary-dark: #0a2238;
+  --color-primary-light: #1a5078;
+  --color-gold: #c8943e;
+  --color-gold-dark: #a87a2a;
+
+  --color-bg: #fafaf8;
+  --color-white: #ffffff;
+  --color-cream: #f5f1ea;
+  --color-text: #1a1a1a;
+  --color-muted: #5a5a5a;
+  --color-border: #e6e0d6;
+
+  --color-navy-tint: #eef3f8;
+  --color-gold-tint: #fdf8f0;
+  --color-gold-light: #d4a94e;
+
+  --border-radius: 10px;
+  --transition-fast: 220ms ease;
+
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: Georgia, 'Times New Roman', serif;
+  --font-display: var(--font-serif);
+
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --space-4xl: 5rem;
+  --space-5xl: 7rem;
+  --space-6xl: 9rem;
+
+  --max-width: 1160px;
+  --radius: 10px;
+  --transition: 220ms ease;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: var(--color-primary); text-decoration: none; transition: color var(--transition); }
+a:hover { color: var(--color-primary-light); }
+ul { list-style: none; }
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-text);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+h1 { font-size: clamp(2.5rem, 6vw, 4rem); }
+h2 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); }
+h3 { font-size: clamp(1.125rem, 2vw, 1.375rem); }
+
+p { margin-bottom: var(--space-md); color: var(--color-muted); }
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-xl);
+}
+
+.section { padding: var(--space-6xl) 0; }
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: rgba(200, 148, 62, 0.2);
+  color: var(--color-primary-dark);
+}
+
+/* ============================================
+   SCROLL-REVEAL ANIMATIONS
+   ============================================ */
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(36px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes reveal-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes reveal-scale {
+  from { opacity: 0; transform: scale(0.94); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* Apply to sections so content reveals as user scrolls */
+section.section {
+  animation: reveal-up 0.8s ease-out both;
+  animation-timeline: view();
+  animation-range: entry 0% entry 100%;
+}
+
+/* Staggered children reveal */
+.gallery__item,
+.how__row,
+.impact__stat,
+.whoweserve__card,
+.prog-card,
+.whatwedo__grid .card,
+.about__vm-card,
+.about__gov-card {
+  animation: reveal-up 0.7s ease-out both;
+  animation-timeline: view();
+  animation-range: entry 5% entry 90%;
+}
+
+/* Sequential stagger for impact stats */
+.impact__stat:nth-child(1) { animation-delay: 0ms; }
+.impact__stat:nth-child(2) { animation-delay: 120ms; }
+.impact__stat:nth-child(3) { animation-delay: 240ms; }
+
+/* Sequential stagger for how-we-work rows */
+.how__row:nth-of-type(1) { animation-delay: 0ms; }
+.how__row:nth-of-type(2) { animation-delay: 120ms; }
+.how__row:nth-of-type(3) { animation-delay: 240ms; }
+
+/* ============================================
+   SMOOTH INTERACTIONS — globally applied
+   ============================================ */
+button, .cta, a {
+  transition: all 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+img {
+  transition: opacity 400ms ease, transform 400ms ease;
+}
+
+/* Loading shimmer for images */
+img[loading="lazy"] {
+  background: linear-gradient(110deg, var(--color-navy-tint) 30%, #e8e4dc 50%, var(--color-navy-tint) 70%);
+  background-size: 200% 100%;
+  animation: shimmer 1.6s infinite;
+}
+
+img[loading="lazy"]:not([src=""]) {
+  background: none;
+  animation: none;
+}
+
+@keyframes shimmer {
+  0%  { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Link underline swoosh */
+a:not(.cta):not(.header__logo):not(.footer__logo-link):not(.header__nav-link) {
+  background-image: linear-gradient(var(--color-gold), var(--color-gold));
+  background-size: 0% 1px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  transition: background-size 350ms ease;
+}
+
+a:not(.cta):not(.header__logo):not(.footer__logo-link):not(.header__nav-link):hover {
+  background-size: 100% 1px;
+}
+
+/* Card hover lift */
+.card,
+.gallery__item,
+.prog-card,
+.whoweserve__card,
+.about__vm-card,
+.contact__info-card,
+.contact__partner-card {
+  transition: transform 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 400ms ease;
+}
+
+.card:hover,
+.gallery__item:hover,
+.prog-card:hover,
+.whoweserve__card:hover,
+.about__vm-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(18, 52, 86, 0.10);
+}
+
+/* ============================================
+   SCROLLBAR — subtle, on-brand
+   ============================================ */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c4bfb6;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-muted);
+}
+
+/* ============================================
+   PERFORMANCE — prefer reduced motion
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

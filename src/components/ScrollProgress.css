@@ -1,0 +1,13 @@
+/* ============================================
+   SCROLL PROGRESS BAR — thin gold line at top
+   ============================================ */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-gold), var(--color-gold-light), var(--color-gold));
+  z-index: 200;
+  transition: width 80ms linear;
+  border-radius: 0 2px 2px 0;
+}

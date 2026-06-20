@@ -1,0 +1,24 @@
+/* Stat Card */
+.stat-card { text-align: center; padding: var(--space-2xl) var(--space-xl); }
+
+.stat-card__number {
+  display: block;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1.1;
+  margin-bottom: var(--space-sm);
+}
+
+.stat-card__suffix {
+  font-size: 0.6em;
+  font-weight: 400;
+  color: var(--color-gold);
+}
+
+.stat-card__label {
+  display: block;
+  font-size: 0.9375rem;
+  color: var(--color-muted);
+  line-height: 1.5;
+}
