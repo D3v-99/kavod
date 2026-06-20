@@ -23,6 +23,16 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => { document.body.style.overflow = '' }
+  }, [menuOpen])
+
   return (
     <header className={`header ${scrolled ? 'header--scrolled' : ''}`}>
       <div className="header__inner container">
@@ -34,7 +44,8 @@ export default function Header() {
           />
         </Link>
 
-        <nav className={`header__nav ${menuOpen ? 'header__nav--open' : ''}`}>
+        {/* Desktop nav */}
+        <nav className="header__nav">
           <ul className="header__nav-list">
             {NAV_LINKS.map((link) => (
               <li key={link.to}>
@@ -44,7 +55,6 @@ export default function Header() {
                   className={({ isActive }) =>
                     `header__nav-link ${isActive ? 'header__nav-link--active' : ''}`
                   }
-                  onClick={() => setMenuOpen(false)}
                 >
                   {link.label}
                 </NavLink>
@@ -63,6 +73,31 @@ export default function Header() {
           <span />
           <span />
         </button>
+      </div>
+
+      {/* Mobile overlay */}
+      <div
+        className={`header__mobile-overlay ${menuOpen ? 'header__mobile-overlay--open' : ''}`}
+        onClick={() => setMenuOpen(false)}
+      >
+        <nav className="header__mobile-nav">
+          <ul className="header__mobile-nav-list">
+            {NAV_LINKS.map((link) => (
+              <li key={link.to}>
+                <NavLink
+                  to={link.to}
+                  end={link.to === '/'}
+                  className={({ isActive }) =>
+                    `header__mobile-nav-link ${isActive ? 'header__mobile-nav-link--active' : ''}`
+                  }
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {link.label}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </div>
     </header>
   )
